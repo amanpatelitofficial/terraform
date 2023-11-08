@@ -4,13 +4,16 @@ variable "environment_tags" {
   default     = ["development", "staging", "production"]
 }
 
+variable "ami_id" {
+  description = "AMI ID"
+  type        = string
+  default     = "ami-0400dbd1850503de3"
+}
 
 resource "aws_instance" "my_instance" {
-  count         = 3 
+  count         = 3
   ami           = var.ami_id
-  instance_type = var.instance_type
-  key_name      = var.key_name
-  subnet_id     = var.subnet_id
+  instance_type = "t2.micro"
 
   tags = {
     Name = var.environment_tags[count.index]
