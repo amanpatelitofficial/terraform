@@ -8,3 +8,12 @@ terraform {
     dynamodb_table = ""    # for locking one user at one time 
 }
 }
+
+# cd /projectA 
+# terraform workspace list
+# terraform workspace create new prod
+# terraform workspace create new test
+# terraform workspace select test 
+# 
+
+
