@@ -1,0 +1,9 @@
+terraform {
+  backened "s3" {
+    backet  =  ""
+    key     =  ""
+    reagion =  ""
+    access_key = ""
+    secret_key = ""
+ }
+}

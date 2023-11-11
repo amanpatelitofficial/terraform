@@ -15,6 +15,8 @@ resource "aws_instance" "my_instance" {
     Name = var.environment_tags[count.index]
   }
 }
+
+
  
 
    
