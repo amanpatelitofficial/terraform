@@ -1,22 +1,30 @@
 provider "aws" {
-    region = "ap-south-1"
+    region = "us-west-1"
+}
+
+variable "aws_instance" {
+    description = "web"
+    type = list
+    default = ["t2.micro", "t2.medium"]
+}
+
+variable "aws_ami" {
+    description = "ami"
+    type = string
+    default = "ami-0cbd40f694b804622"
 }
 
 locals {
-  common_tags {
-    Name = Delhi
+  tags = {
+    Name = "Aman"
+    Owner = "Opstree"
   }
 }
-
-
 resource "aws_instance" "web" {
-    instance_type = "t2.micro"
-    ami = ""
-    tags = "local.common_tags"
-}
+     count = 2
+     instance_type = var.aws_instance[count.index]
+     ami = var.aws_ami
 
-resource "aws_ebs_volume" "v1" {
-    availability_zone = "ap-south-1a"
-    size = 10
-    tags = "local.common_tags"
-}
+      tags = local.tags
+     }
+
