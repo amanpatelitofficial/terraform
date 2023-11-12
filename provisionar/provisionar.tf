@@ -17,8 +17,8 @@
     }
 
  provisionar "file" {
-    source = /home0aman/index.html"
-    destations = "tmp/index.html"
+    source = /home0aman/index.html
+    destations = tmp/index.html
 }
 
  provisionar "remote-exec" {
