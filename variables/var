@@ -1,0 +1,12 @@
+
+
+1. Types of Terraform Variables
+There are two types of variables in Terraform -
+
+Simple values        - string, number, bool
+Collection Variable  - list, map, set
+
+
+
+
+
