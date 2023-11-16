@@ -21,6 +21,7 @@ provider "aws" {
 
 
 # 3rd Method
+# Run below command on linux terminal only 
 
 export AWS_ACCESS_KEY_ID="A0LPA509NDFKJ74HW0CPAGH0FNM3" 
 export AWS_SECRET_ACCESS_KEY="a1toUHEBHSU404823JjdssNicCwcT61DfzHtHtkWJYhgnN"
