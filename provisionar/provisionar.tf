@@ -32,11 +32,11 @@
 }
 
 connections {
-   host = "local_public_key"
+   host = "self.public_ip"
    user = "ec2-user"
    type = "ssh"
    private_key = file(./"devops")
 }
-   
+ }
    
   
