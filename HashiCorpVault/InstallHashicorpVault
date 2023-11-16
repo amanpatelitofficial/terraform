@@ -1,0 +1,49 @@
+# Install HashiCorpVault by below link
+
+link -  https://developer.hashicorp.com/vault/install?product_intent=vault
+
+# Vault Start & Stop in devlopment mode
+
+$ vault server -v   -    it will start vault server in devlopment mode (Devlopment mode does not  support Production) -- port, storage, unseenkey, roottoken
+
+port -
+storage - inmem or inmemory (when we use storage in devlopment then it uses inmemory & in production it storage data in somewhere in disk or database)
+unseenkey - 
+roottoken - 
+
+$ export VAULT_ADDER= ""
+$ export VAULT_TOKEN= ""
+
+$ vault status 
+
+# Enable Secret
+$ vault secrets enable -path=mypath kv 
+
+
+# Write
+$ vault kv (key/value) put  path  key-1=value-1 
+
+# Read
+$ vault kv get path
+          or
+$ vault kv get -formate=json kv
+
+# Delete
+$ vault kv delete path
+
+# list secret 
+$ vault secrets list
+
+$ vault secrets enable -path=aws aws     # enable secrets for aws 
+
+$ vault secrets disable aws 
+
+
+
+
+
+
+
+
+
+
