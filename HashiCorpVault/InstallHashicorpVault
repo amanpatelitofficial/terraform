@@ -4,7 +4,7 @@ link -  https://developer.hashicorp.com/vault/install?product_intent=vault
 
 # Vault Start & Stop in devlopment mode
 
-$ vault server -v   -    it will start vault server in devlopment mode (Devlopment mode does not  support Production) -- port, storage, unseenkey, roottoken
+$ vault server -dev   -    it will start vault server in devlopment mode (Devlopment mode does not  support Production) -- port, storage, unseenkey, roottoken
 
 port -
 storage - inmem or inmemory (when we use storage in devlopment then it uses inmemory & in production it storage data in somewhere in disk or database)
@@ -38,13 +38,14 @@ $ vault secrets enable -path=aws aws     # enable secrets for aws
 
 $ vault secrets disable aws 
 
-$ vault kv put secret/aws access_key=your_access_key secret_key=your_secret_key
+$ vault write aws/config/root \
+  access_key=your_access_key \
+  secret_key=your_secret_key \
+  region=your_aws_region
 
 
 
 
-
-
-
+@
 
 
