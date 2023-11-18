@@ -1,3 +1,9 @@
+
+/* In Terraform, data sources are used to fetch information or data from an external source, such as an existing infrastructure, and use that data within your Terraform configuration. Data sources are defined in a separate Terraform file with a .tf extension
+
+
+
+
 provider "aws" {
     region     = "eu-central-1"
     access_key = "AKIATQ37NXB2JMXVGYPG"
