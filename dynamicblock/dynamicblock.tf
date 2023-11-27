@@ -15,7 +15,7 @@ resource "aws_security_group" "main" {
 
    dynamic "ingress" {
       for_each = local.ingress_rules or [22, 80]
-                                       interator = port
+                                       iterator = port
       content {
          description = ingress.value.description
          from_port   = ingress.value.port
