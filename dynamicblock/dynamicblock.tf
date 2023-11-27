@@ -14,8 +14,8 @@ resource "aws_security_group" "main" {
    vpc_id = data.aws_vpc.main.id
 
    dynamic "ingress" {
-      for_each = local.ingress_rules
-
+      for_each = local.ingress_rules or [22, 80]
+                                       interator = port
       content {
          description = ingress.value.description
          from_port   = ingress.value.port
