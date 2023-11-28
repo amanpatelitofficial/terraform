@@ -11,10 +11,10 @@ terraform {
 
 # Workspace Conspect # 
 
-# terraform workspace lsit
+# terraform workspace list
 # terraform workspace show
-# terraform workspace create new prod
-# terrafrom workspace create new testing
+# terraform workspace new prod
+# terrafrom workspace new testing
 # terraform workspace select testing 
 
 # Note* In both testing & prod workspace tf file remain same 
