@@ -1,26 +1,23 @@
-resource "aws_instance" "web" {
-     ami = data.aws_ami.web.id 
-     instance_type = "t2.micro"
-     
-     tags = {
-       Name = "web"
-     }
-      
-}
-output "web_ami_id" {
-  value = data.aws_ami.web.id
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  owners = ["amazon"]
+  filter {
+    name = "name"
+    values = [ "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20230516" ]
+  }
 }
 
+output "ubuntu_ami_id" {
+  value = data.aws_ami.ubuntu
+}
 
+resource "aws_instance" "server" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
 
-data "aws_ami" "web" {
-    most_recent = true
-    owners = [ "amazon" ]
-
-    filter {
-      name = "name"
-      values = ["Amazon Linux 2023 AMI 2023.2.20231113.0 x86_64 HVM kernel-6.1"]
-    }
-  
+  tags = {
+    Name = "ubuntu_instance"
+  }
 }
 
